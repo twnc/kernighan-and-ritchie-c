@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 
+float fahr_to_celcius(float fahr);
+
 int main()
 {
 	float fahr, celcius;
@@ -14,8 +16,14 @@ int main()
 
 	fahr = lower;
 	while (fahr <= upper) {
-		celcius = (5.0/9.0) * (fahr-32.0);
+		celcius = fahr_to_celcius(fahr);
 		printf("%3.0f %6.1f\n", fahr, celcius);
 		fahr = fahr + step;
 	}
+}
+
+float fahr_to_celcius(float fahr)
+{
+	float celcius = (5.0/9.0) * (fahr-32.0);
+	return celcius;
 }
